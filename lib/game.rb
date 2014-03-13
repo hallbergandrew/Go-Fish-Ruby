@@ -37,31 +37,30 @@ attr_accessor :turn
     @turn +=1
   end
 
-#   def player_ask(card)
-#     card = card[1..-1]
-#     one_random_card = random_card
-#     if @turn.even? #player 2's turn
-#       if @player1.hand.include?(card)
-#         @player2.hand << @player1.hand.delete(card)
-#         return true
-#       else
+  def player_ask(card)
+    one_random_card = random_card
+    if @turn.even? #player 2's turn
+      if @player1.hand.include?(card)
+        @player2.hand << @player1.hand.delete(card)
+        return true
+      else
 
-#         @player2 << one_random_card
-#         @deck.total_cards.delete(one_random_card)
-#         return false
-#       end
-#     # player 1s turn
-#     else
-#       if @player2.hand.include?(card)
-#         @player1.hand << @player2.hand.delete(card)
-#         return true
-#       else
-#         @player1.hand << one_random_card
-#         @deck.total_cards.delete(one_random_card)
-#         return false
-#     end
-#   end
-# end
+        @player2 << one_random_card
+        @deck.total_cards.delete(one_random_card)
+        return false
+      end
+    # player 1s turn
+    else
+      if @player2.hand.include?(card)
+        @player1.hand << @player2.hand.delete(card)
+        return true
+      else
+        @player1.hand << one_random_card
+        @deck.total_cards.delete(one_random_card)
+        return false
+    end
+  end
+end
 
 
 

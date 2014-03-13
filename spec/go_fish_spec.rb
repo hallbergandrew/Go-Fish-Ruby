@@ -55,8 +55,8 @@ describe Game do
       game = Game.new('dan', 'andrew')
       game.player2.hand = ['h3','s1']
       game.turn =  1
-      game.player_ask('5').should eq false
-      game.player_ask('1').should eq true
+      game.player_ask('s5').should eq false
+      game.player_ask('s1').should eq true
     end
   end
 end

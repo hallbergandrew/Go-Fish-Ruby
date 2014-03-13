@@ -2,7 +2,7 @@
 class Player
 
   attr_reader  :books, :name, :hand_size
-  attr_accessor :hand,
+  attr_accessor :hand
 
   def initialize(name)
     @name = name
